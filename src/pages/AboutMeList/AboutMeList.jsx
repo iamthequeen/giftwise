@@ -85,7 +85,7 @@ try {
     // then add all new documents into the collection
 
 } catch (err) {
-console.error(err)
+console.error("There's been an error: ", err)
 }
 
 try {
@@ -103,7 +103,7 @@ try {
     })
     setSuccessAlert("success")
 } catch (err) {
-console.error(err)
+console.error("There's been an error: ", err)
 setSuccessAlert("fail")
 }
    unsubList()

@@ -102,7 +102,7 @@ onClick={() => {
 <ListItemAvatar>
 <Avatar
 alt={person.name}
-  src={person.uid === currentUser?.uid || person.uid === "guest" ? "" : `/images/avatars/${person.imgName}`}
+  src={person.uid === currentUser?.uid || person.uid === "guest" ? "" : `/images/avatars/${person?.imgName}`}
 />
 </ListItemAvatar>
 <ListItemText primary={person.name} />

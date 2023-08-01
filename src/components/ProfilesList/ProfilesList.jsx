@@ -73,7 +73,7 @@ const tempData = [
                 setProfilesList(filteredProfilesData)
                 setAllProfilesLoading(false)
             } catch (err){
-                console.error(err)
+                console.error("There's been an error: ", err)
             }
         }
 
@@ -107,7 +107,7 @@ listAll(avatarListRef).then((res) => {
         })
     })
 }).catch((err) => {
-    console.error(err)
+    console.error("There's been an error: ", err)
 })
 setProfilesList(updatedArr)
     setImagesLoading(false)
@@ -159,7 +159,7 @@ setProfilesList(updatedArr)
             width: "10rem",
             border: `2px solid ${theme.palette.whiteTertiary.main}`,
             }}
-        image={`/images/avatars/${profile.imgName}`}
+        image={`/images/avatars/${profile?.imgName}`}
         title={profile.name}
       / >
    {/*   )

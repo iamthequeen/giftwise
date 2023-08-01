@@ -181,47 +181,16 @@ usersGroups.map(group => {
 
      if (friendsDocSnap.exists()) {
       updatedSelectArr.push("Friends")
-    } else {
-        console.error("user isn't a friend")
-    }
+    } 
 
     if (familyDocSnap.exists()) {
       updatedSelectArr.push("Family")
-    } else {
-        console.error("user isn't family")
-    }
+    } 
 
 if (colleaguesDocSnap.exists()) {
   updatedSelectArr.push("Colleagues")
-    } else {
-        console.error("user isn't a colleague")
     }
 
-
-//  if (friendsDocSnap.exists() && !selectedItems.includes("Friends")) {
-//          setSelectedItems((prevItems) => [...prevItems, "Friends"])
-//     } else if (!friendsDocSnap.exists() && selectedItems.includes("Friends")) {
-// setSelectedItems(selectedItems.filter((item) => item !== "Friends"))
-//     } else {
-//         console.error("user isn't a friend")
-//     }
-
-//     if (familyDocSnap.exists() && !selectedItems.includes("Family")) {
-//         setSelectedItems((prevItems) => [...prevItems, "Family"])
-//     } else if (!familyDocSnap.exists() && selectedItems.includes("Family")) {
-//       setSelectedItems(selectedItems.filter((item) => item !== "Family"))
-//     } else {
-//         console.error("user isn't family")
-//     }
-
-// if (colleaguesDocSnap.exists() && !selectedItems.includes("Colleagues")) {
-//         setSelectedItems((prevItems) => [...prevItems, "Colleagues"])
-
-//     } else if (!colleaguesDocSnap.exists() && selectedItems.includes("Colleagues")) {
-//       setSelectedItems(selectedItems.filter((item) => item !== "Colleagues"))
-//     } else {
-//         console.error("user isn't a colleague")
-//     }
 
 
          setUsersGroups(updatedGroupsArr)
@@ -245,7 +214,7 @@ querySnapshot.forEach((doc) => {
 
 });
   } catch (err) {
-    console.error("errrrr: ", err)
+    console.error("There's been an error: ", err)
   }
 } else if (viewingUser.profileType === PROFILE_TYPES.GUEST) {
 setProfileAboutMeList(guestDetails)
@@ -298,7 +267,7 @@ if (isFam) {
 }
 
   } catch (err) {
-    console.error("errrrr: ", err)
+    console.error("There's been an error: ", err)
   }
 }
  
@@ -352,7 +321,7 @@ const fetchUserData = async () => {
     setPageData({...res})
 
     } catch (error) {
-      console.error(error)
+      console.error("There's been an error: ", error)
     }
     retrieveGroups()
 }
@@ -384,7 +353,7 @@ getDownloadURL(sceneryRef)
         console.error("Unknown error occurred, inspect the server response")
         break;
         default: 
-        console.error("weird....")
+        console.error("There's been an error")
     }
   });
 }
@@ -460,7 +429,7 @@ const unsubscribe = onSnapshot(userDocRef, (userDoc) => {
       setPersonalProfessions(updatedProfs)
   },
   (error) => {
-    console.error(error)
+    console.error("There's been an error: ", error)
   }
   );
 
@@ -513,7 +482,7 @@ const handlePageData = () => {
         setScenery("/images/scenery/purple-sunset-santorini.jpg")
         break;
         default: 
-        console.error("Something went wrong with the scenery image!")
+        console.error("There's been an error with the scenery image!")
     }
 }
 
@@ -665,7 +634,7 @@ sx={{
       <CardContent>
       <Avatar 
       alt={viewingUser.profileType === PROFILE_TYPES.OTHER ? pageData.name : ""} 
-      src={viewingUser.profileType === PROFILE_TYPES.OTHER ? `/images/avatars/${pageData.imgName}` : ""}
+      src={viewingUser.profileType === PROFILE_TYPES.OTHER ? `/images/avatars/${pageData?.imgName}` : ""}
       sx={{
         bgcolor: theme.palette.lightGreenPrimary.main,
         width: 80,

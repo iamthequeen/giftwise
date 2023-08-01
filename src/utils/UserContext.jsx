@@ -116,8 +116,6 @@ const resetGuestInfo = () => {
 
     if (docSnap.exists()) {
         res = {...docSnap.data()}
-    } else {
-        console.error("document doesn't exist")
     }
 
     
@@ -152,10 +150,8 @@ let myGroupsRes;
   const colleaguesQuerySnapshot = await getDocs(collection(db, `colleagues/${guestUser ? "guest" : currentUser?.uid}/usersColleagues`));
 
    
-if (friendsQuerySnapshot.empty) {
-console.error("friends empty!")
-} else {
-    
+if (!friendsQuerySnapshot.empty) {
+
     for (let friendDoc of friendsQuerySnapshot.docs) {
      let docRef = doc(db, `fakeProfiles/${friendDoc.id}`)
     let docSnap = await getDoc(docRef)
@@ -165,16 +161,12 @@ console.error("friends empty!")
     if (docSnap.exists()) {
         res = {...docSnap.data()}
         friendsArr.push(res)
-    } else {
-        console.error("document doesn't exist")
     }
 }
 }
 
-if (familyQuerySnapshot.empty) {
-console.error("family empty!")
-} else {
-    
+if (!familyQuerySnapshot.empty) {
+
     for (let familyDoc of familyQuerySnapshot.docs) {
      let docRef = doc(db, `fakeProfiles/${familyDoc.id}`)
     let docSnap = await getDoc(docRef)
@@ -184,16 +176,12 @@ console.error("family empty!")
     if (docSnap.exists()) {
         res = {...docSnap.data()}
         familyArr.push(res)
-    } else {
-        console.error("document doesn't exist")
     }
 }
 }
 
-if (colleaguesQuerySnapshot.empty) {
-console.error("colls empty!")
-} else {
-    
+if (!colleaguesQuerySnapshot.empty) {
+
     for (let colleagueDoc of colleaguesQuerySnapshot.docs) {
      let docRef = doc(db, `fakeProfiles/${colleagueDoc.id}`)
     let docSnap = await getDoc(docRef)
@@ -203,8 +191,6 @@ console.error("colls empty!")
     if (docSnap.exists()) {
         res = {...docSnap.data()}
         colleaguesArr.push(res)
-    } else {
-        console.error("document doesn't exist")
     }
     
   }
@@ -213,7 +199,7 @@ console.error("colls empty!")
 
 
   } catch (err) {
-    console.error(err)
+    console.error("There's been an error: ", err)
   }
 
 myGroupsRes = {
@@ -242,10 +228,8 @@ let otherGroupsRes;
   const colleaguesQuerySnapshot = await getDocs(collection(db, `colleagues/${viewingUser.uid}/usersColleagues`));
 
    
-if (friendsQuerySnapshot.empty) {
-console.error("nope!")
-} else {
-    
+if (!friendsQuerySnapshot.empty) {
+
     for (let friendDoc of friendsQuerySnapshot.docs) {
      let docRef1 = doc(db, `fakeProfiles/${friendDoc.id}`)
     let docSnap1 = await getDoc(docRef1)
@@ -264,16 +248,12 @@ console.error("nope!")
     } else if (friendDoc.id === "guest" && guestUser){
       res = {...guestData}
       friendsArr.push(res)
-    } else {
-      console.error("document doesn't exist")
     }
 }
 }
 
-if (familyQuerySnapshot.empty) {
-console.error("nope!")
-} else {
-    
+if (!familyQuerySnapshot.empty) {
+
     for (let familyDoc of familyQuerySnapshot.docs) {
      let docRef1 = doc(db, `fakeProfiles/${familyDoc.id}`)
     let docSnap1 = await getDoc(docRef1)
@@ -292,16 +272,12 @@ console.error("nope!")
     } else if (familyDoc.id === "guest" && guestUser){
       res = {...guestData}
       familyArr.push(res)
-    } else {
-      console.error("document doesn't exist")
     }
 }
 }
 
-if (colleaguesQuerySnapshot.empty) {
-console.error("nope!")
-} else {
-    
+if (!colleaguesQuerySnapshot.empty) {
+
     for (let colleagueDoc of colleaguesQuerySnapshot.docs) {
      let docRef1 = doc(db, `fakeProfiles/${colleagueDoc.id}`)
     let docSnap1 = await getDoc(docRef1)
@@ -320,17 +296,14 @@ console.error("nope!")
     } else if (colleagueDoc.id === "guest" && guestUser){
       res = {...guestData}
       colleaguesArr.push(res)
-    } else {
-      console.error("document doesn't exist")
     }
-    
   }
 }
 
 
 
   } catch (err) {
-    console.error(err)
+    console.error("There's been an error: ", err)
   }
 
 otherGroupsRes = {
@@ -356,7 +329,7 @@ const unsubscribe = onSnapshot(userDocRef, (userDoc) => {
       setPersonalProfessions(updatedProfs)
   },
   (error) => {
-    console.error(error)
+    console.error("There's been an error: ", error)
   }
   );
 
@@ -380,7 +353,7 @@ const unsubscribe = onSnapshot(listCollectionRef, (snapshot) => {
       setProfileAboutMeList(updatedList)
   },
   (error) => {
-    console.error(error)
+    console.error("There's been an error: ", error)
   }
   );
 

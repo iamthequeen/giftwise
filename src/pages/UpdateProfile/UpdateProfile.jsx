@@ -44,7 +44,7 @@ try {
 
     setSuccessAlert("success")
 } catch (err) {
-    console.error(err)
+    console.error("There's been an error: ", err)
     setSuccessAlert("fail")
 }
 

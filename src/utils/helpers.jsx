@@ -34,8 +34,6 @@ export const findUser = async (profileType, userId) => {
 
     if (docSnap.exists()) {
         res = {...docSnap.data()}
-    } else {
-        console.error("document doesn't exist")
     }
 
     // docRefs.forEach(doc => {

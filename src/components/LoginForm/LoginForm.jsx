@@ -53,7 +53,7 @@ const navigate = useNavigate()
             })
         navigate(`/profile/${auth?.currentUser?.uid}`)
         } catch (error) {
-        console.error(error)
+        console.error("There's been an error: ", error)
         alert ("Login failed:", error);
       }
     }
