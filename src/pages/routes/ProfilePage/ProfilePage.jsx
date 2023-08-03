@@ -385,12 +385,12 @@ handleMutuals()
 // This is for when user presses a different user on from their groups list, and tries to go back to their own profile page
 useEffect(() => {
   setIsDataLoading(true)
-  
+  window.scrollTo(0,0)
          resetProfilePage()
 
-   if (profileId === auth?.currentUser?.uid){
+   if (profileId === currentUser?.uid){
     setViewingUser({
-      uid: auth?.currentUser?.uid,
+      uid: currentUser?.uid,
       profileType: PROFILE_TYPES.CURRENT,
     })
        
@@ -492,21 +492,21 @@ const tagsInfo = [
             title: "Personality Traits",
             bgcolor: theme.palette.orangePrimary.main,
             textColor: theme.palette.orangePrimary.darker,
-            arrayState: pageData.personalTraits,
+            arrayState: pageData?.personalTraits,
         },
         {
             id: 2,
             title: "Interests/Hobbies",
             bgcolor: theme.palette.lightGreenPrimary.main,
             textColor: theme.palette.lightGreenPrimary.darker,
-            arrayState: pageData.personalInterests,
+            arrayState: pageData?.personalInterests,
         },
         {
             id: 3,
             title: "Professions",
             bgcolor: theme.palette.aquaPrimary.main,
             textColor: theme.palette.aquaPrimary.darker,
-            arrayState: pageData.personalProfessions,
+            arrayState: pageData?.personalProfessions,
         },
 ]
 
@@ -522,7 +522,7 @@ const tagsElements = tagsInfo.map(tag => (
               gap: "0.35rem",
             }}
           >
-        {tag.arrayState.map(item => (
+        {tag.arrayState?.map(item => (
 <Chip variant="filled" key={item} label={item}
 sx={{
     bgcolor: tag.bgcolor,
