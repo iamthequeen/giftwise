@@ -13,6 +13,9 @@ function LandingPage() {
 
 const { currentUser, guestUser } = useContext(UserContext)
 
+useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
 
     const boxItemsData = [
         {

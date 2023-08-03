@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, Grid, Typography, useTheme, Button, TextField } from "@mui/material";
 import './ErrorPage.css'
 import { Link } from 'react-router-dom';
@@ -7,6 +7,10 @@ import { Link } from 'react-router-dom';
 function ErrorPage() {
 
     const theme = useTheme()
+
+    useEffect(() => {
+      window.scrollTo(0,0)
+    }, [])
 
     return (
        <>
