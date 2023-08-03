@@ -64,7 +64,7 @@ const [guestDetails, setGuestDetails] = useLocalStorage("tempDetails", [])
 localStorage.setItem('authUser', JSON.stringify(user))
     //   setCurrentUser(user ? user : null)
       
-    setCurrentUser(user)
+    setCurrentUser(user)   
     }
     
     ,
@@ -91,7 +91,7 @@ const resetData = () => {
           setMyDetails([])
 
           setGuestTraits([])
-          setGuestDetails([])
+          setGuestInterests([])
           setGuestProfessions([])
           setGuestDetails([])
 
@@ -242,7 +242,7 @@ if (!friendsQuerySnapshot.empty) {
     if (docSnap1.exists()) {
         res = {...docSnap1.data()}
         friendsArr.push(res)
-    } else if (docSnap2.exists()) {
+    } else if (docSnap2.exists() && docSnap2.data().uid === currentUser?.uid) {
         res = {...docSnap2.data()}
         friendsArr.push(res)
     } else if (friendDoc.id === "guest" && guestUser){
@@ -266,7 +266,7 @@ if (!familyQuerySnapshot.empty) {
     if (docSnap1.exists()) {
         res = {...docSnap1.data()}
         familyArr.push(res)
-    } else if (docSnap2.exists()) {
+    } else if (docSnap2.exists() && docSnap2.data().uid === currentUser?.uid) {
         res = {...docSnap2.data()}
         familyArr.push(res)
     } else if (familyDoc.id === "guest" && guestUser){
@@ -290,7 +290,7 @@ if (!colleaguesQuerySnapshot.empty) {
     if (docSnap1.exists()) {
         res = {...docSnap1.data()}
         colleaguesArr.push(res)
-    } else if (docSnap2.exists()) {
+    } else if (docSnap2.exists() && docSnap2.data().uid === currentUser?.uid) {
         res = {...docSnap2.data()}
         colleaguesArr.push(res)
     } else if (colleagueDoc.id === "guest" && guestUser){
