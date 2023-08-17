@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# GiftWise: Thoughtful Gift Sharing Web Application
+<img src="public/images/giftwise-logo.png" align="right"
+     alt="GiftWise logo" width="150"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GiftWise is a thoughtful gift sharing platform made with React, Material UI (MUI), and Firebase.
+The platform's primary purpose is to encourage thoughtful gift-giving by enabling users to share their preferences with specific groups.
 
-## Available Scripts
+<div align="center">
+  
+  [Demo](#demo) •
+  [Walkthrough](#walkthrough) •
+[Features](#features) •
+[Built With](#built-with) •
+[Installation](#installation)
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## Demo
+Here is a working live demo : https://giftwise.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Walkthrough
+Click image below to watch the walkthrough!
+<br/>
+<a href="https://youtu.be/QWB3p1N6ATU" target="_blank" rel="noopener">
+<img src="https://images.unsplash.com/photo-1673897969233-e706f4b522ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80" alt="watch GiftWise walkthrough" width="200"/>
+</a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+### Designed for you
+As a new user, you're able to complete a form to create a personal profile!
+<br/>
+<br/>
+An example of one page from the form:
+<img src="https://github.com/iamthequeen/giftwise/assets/88898113/8c375382-84aa-4327-93bb-30111f7e92f2" alt="A page form from GiftWise" />
+<br/>
+<br/>
+An example of a guest profile page:
+<br/>
+<img src="https://github.com/iamthequeen/giftwise/assets/88898113/6033eaca-93ed-49af-a657-1d58c50268ea" alt="Guest Profile Page from GiftWise"/>
 
-### `npm test`
+### Customize Groups
+Users can add other users to their groups.
+<br/>
+<img src="https://github.com/iamthequeen/giftwise/assets/88898113/8c6e0820-9b3e-44d7-9c2a-c544e4a7c5a3" alt="a user's profile page" />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
+- [React JS](https://react.dev/) - Front-end JavaScript library for building user interfaces based on components.
+- [Material UI (MUI)](https://mui.com/) - React component library that implements Google's Material Design.
+- [Firebase](http://firebase.google.com/) - A set of backend cloud computing services and application development platforms provided by Google (i.e. hosts databases, services, authentication, etc.).
+- [React Hook Form](https://www.react-hook-form.com/) - Library that helps to manage complex forms.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Get the code by cloning the repo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<pre>git clone https://github.com/iamthequeen/giftwise.git</pre>
+ 
+Install required dependencies (this is to install node modules folder)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<pre>npm install</pre>
 
-### `npm run eject`
+Start the server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<pre>npm start</pre>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Need help? Watch this <a href="https://youtu.be/i8KuDon82KM" target="_blank" rel="noopener noreferrer">tutorial</a> for better understanding!
